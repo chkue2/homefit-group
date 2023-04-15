@@ -1,0 +1,114 @@
+@import '@/assets/scss/_index.scss';
+.title {
+  padding: 0 24px;
+  font-size: 24px;
+  font-weight: $bold;
+}
+.form {
+  margin-top: 52px;
+  padding: 0 24px;
+  .form__item {
+    display: flex;
+    flex-direction: column;
+    .item__title {
+      font-size: 13px;
+      color: #7d7d7d;
+      margin-bottom: 4px;
+    }
+    input {
+      height: 48px;
+      padding: 0 12px;
+      display: flex;
+      align-items: center;
+      border: 1px solid #e1e1e1;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: $medium;
+    }
+    textarea {
+      height: 180px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      border: 1px solid #e1e1e1;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: $medium;
+      resize: none;
+    }
+    select {
+      height: 48px;
+      padding: 0 12px;
+      display: flex;
+      align-items: center;
+      border: 1px solid #e1e1e1;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: $medium;
+      background-image: url(https://dcse8twossp9.cloudfront.net/static/img/icon/arrow-right-gray-24-px.svg);
+      background-size: 24px;
+      background-position-x: calc(100% - 12px);
+      background-position-y: center;
+      background-repeat: no-repeat;
+    }
+    .item__person {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      div {
+        width: calc(50% - 6px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #e1e1e1;
+        border-radius: 12px;
+        padding: 0 12px;
+        p {
+          font-weight: $medium;
+        }
+        input {
+          border: none;
+          flex: 1;
+          text-align: center;
+          padding: 0;
+          width: 100%;
+        }
+      }
+    }
+    &.mt {
+      margin-top: 12px;
+    }
+    & + .form__item {
+      margin-top: 12px;
+    }
+  }
+  .form__info {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #555555;
+    padding-bottom: 108px;
+  }
+  .form__button {
+    width: 100%;
+    padding: 24px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    p {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #e1e1e1;
+      color: #ffffff;
+      border-radius: 12px;
+      font-weight: $medium;
+      cursor: pointer;
+      &.on {
+        background-color: #000000;
+        cursor: pointer;
+      }
+    }
+  }
+}

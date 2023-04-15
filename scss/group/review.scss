@@ -1,0 +1,159 @@
+@import '~/assets/scss/group/index.scss';
+#groupSectionReview {
+  padding: 120px 0;
+  background-color: #f8f8f8;
+}
+.review-section-title {
+  font-size: 36px;
+  font-weight: $bold;
+  margin-bottom: 40px;
+  position: relative;
+  br {
+    display: none;
+  }
+  .review-icon {
+    width: 360px;
+    position: absolute;
+    right: 0;
+    bottom: -16px;
+  }
+}
+.review-container {
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+.review-box {
+  @include flexBox(column, space-between, flex-start);
+  width: 380px;
+  height: 370px;
+  padding: 36px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.03);
+  background-color: #ffffff;
+  .review-type {
+    font-weight: $medium;
+    color: #b9b9b9;
+    margin-bottom: 12px;
+  }
+  .review-content {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .review-bottom {
+    @include flexBox(row, flex-start, center);
+    gap: 12px;
+  }
+  .review-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .review-name {
+    font-size: 18px;
+    font-weight: $bold;
+  }
+  &.box--black {
+    background-color: #232323;
+    .review-type {
+      color: #7d7d7d;
+    }
+    .review-content {
+      color: #ffffff;
+    }
+    .review-name {
+      color: #ffffff;
+    }
+  }
+}
+.review-partner-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  position: relative;
+}
+.partner-logo {
+  height: 80px;
+  @include flexBox(row, center, center);
+  position: relative;
+  z-index: 2;
+  img {
+    width: 90px;
+    height: auto;
+  }
+}
+.partner-bg {
+  width: 200vw;
+  height: 500px;
+  top: -20px;
+  left: -100vw;
+  background-image: linear-gradient(
+    180deg,
+    rgba(248, 248, 248, 1) 0%,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  position: absolute;
+  z-index: 1;
+}
+
+@media all and (max-width: 1023px) {
+  #groupSectionReview {
+    padding: 60px 0;
+  }
+  .review-section-title {
+    font-size: 24px;
+    z-index: 3;
+    margin: 0 -24px;
+    padding-left: 24px;
+    margin-bottom: 40px;
+    br {
+      display: block;
+    }
+    .review-icon {
+      width: 162px;
+      position: absolute;
+      right: 0;
+      bottom: -88px;
+    }
+  }
+  .review-container {
+    margin-bottom: 40px;
+    overflow: unset;
+  }
+  .review-box {
+    width: 280px;
+    height: 314px;
+    padding: 24px;
+    .review-type {
+      font-size: 14px;
+    }
+    .review-content {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .review-bottom {
+      gap: 8px;
+    }
+    .review-logo {
+      width: 42px;
+      height: 42px;
+    }
+    .review-name {
+      font-size: 14px;
+      font-weight: $medium;
+    }
+  }
+  .review-partner-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .partner-logo {
+    height: 90px;
+    img {
+      width: 90px;
+      height: auto;
+    }
+  }
+  .partner-bg {
+    height: 810px;
+  }
+}

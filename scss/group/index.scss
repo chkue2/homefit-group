@@ -1,0 +1,292 @@
+@import '~/assets/scss/_index.scss';
+$group-max-width: 1024px;
+$group-side-padding: 0 24px;
+$group-violet: #6400f0;
+$group-green: #00e6aa;
+$group-orange: #ff7d00;
+
+.group-section {
+  position: relative;
+}
+.group-h-100 {
+  min-height: 100vh;
+}
+.group-auto-size {
+  max-width: $group-max-width;
+  padding: $group-side-padding;
+  margin: 0 auto;
+}
+.group-program-tabs {
+  @include flexBox();
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.program-tab {
+  width: 160px;
+  height: 60px;
+  @include flexBox(row, center, center);
+  border-radius: 30px;
+  background-color: #b9b9b9;
+  font-size: 20px;
+  font-weight: $medium;
+  color: #ffffff;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  &:hover {
+    opacity: 0.8;
+  }
+  &.tab--on {
+    &.tab-violet {
+      background-color: $group-violet;
+    }
+    &.tab-green {
+      background-color: $group-green;
+    }
+  }
+}
+.group-modal-container {
+  @include flexBox();
+  width: 780px;
+  height: 600px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  .modal-left {
+    position: relative;
+    width: 360px;
+    height: 100%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .modal-right {
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    padding: 40px;
+  }
+  .modal-close {
+    width: 24px;
+    height: 24px;
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+    @include defaultIcon(
+      'https://dcse8twossp9.cloudfront.net/static/img/v2/icon/close-black.svg'
+    );
+  }
+  .modal-title {
+    font-weight: $bold;
+    margin-bottom: 4px;
+    & + .modal-form {
+      margin-top: 24px;
+    }
+  }
+  .modal-subtitle {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 24px;
+    span {
+      font-size: 12px;
+    }
+  }
+  .modal-form {
+    @include flexBox(column, center, center);
+    gap: 12px;
+  }
+  .form-block {
+    @include flexBox(column, center, center);
+    width: 100%;
+    gap: 4px;
+  }
+  .block-title {
+    width: 100%;
+    font-size: 13px;
+    &.block-intro-title {
+      @include flexBox(row, flex-start, center);
+      i {
+        display: block;
+        width: 14px;
+        height: 14px;
+        line-height: 14px;
+        margin-left: 2px;
+        cursor: pointer;
+        background-color: #000000;
+        border-radius: 50%;
+        text-align: center;
+        color: #ffffff;
+        font-size: 12px;
+        font-style: inherit;
+      }
+    }
+  }
+  .block-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e1e1e1;
+    font-weight: $medium;
+    cursor: default;
+  }
+  .block-select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e1e1e1;
+    font-weight: $medium;
+    cursor: pointer;
+    background-image: url('https://dcse8twossp9.cloudfront.net/static/img/v2/icon/expand-more-right-gray.svg');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: calc(100% - 12px);
+    &.select-empty {
+      color: #b9b9b9;
+    }
+  }
+  .block-textarea {
+    width: 100%;
+    height: 100px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e1e1e1;
+    font-weight: $medium;
+    cursor: default;
+    resize: none;
+  }
+  .modal-captions {
+    margin-top: 12px;
+    .modal-caption {
+      font-size: 12px;
+      font-weight: $light;
+      color: #555555;
+      line-height: normal;
+      &.caption--medium {
+        color: #000000;
+        font-weight: $medium;
+      }
+    }
+  }
+  .modal-button {
+    width: 340px;
+    height: 60px;
+    @include flexBox(row, center, center);
+    border-radius: 12px;
+    color: #ffffff;
+    cursor: default;
+    background-color: #e1e1e1;
+    position: fixed;
+    right: 40px;
+    bottom: 20px;
+    will-change: auto;
+    &.button--on {
+      cursor: pointer;
+      background-color: #000000;
+    }
+    &.button--nonefix {
+      position: unset;
+      right: unset;
+      bottom: unset;
+    }
+  }
+  .button-pb {
+    padding-bottom: 50px;
+  }
+  .button-pb-36 {
+    padding-bottom: 36px;
+  }
+  .block-field {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+    @include flexBox(column, center, center);
+    gap: 12px;
+    label {
+      width: 100%;
+      @include flexBox(row, flex-start, center);
+      gap: 8px;
+      input[type='checkbox'] {
+        & + i {
+          display: none;
+          width: 20px;
+          height: 20px;
+          @include defaultIcon(
+            'https://dcse8twossp9.cloudfront.net/static/img/icon/check-box-outline-gray.svg'
+          );
+        }
+      }
+      input[type='radio'] {
+        & + i {
+          display: none;
+          width: 20px;
+          height: 20px;
+          @include defaultIcon(
+            'https://dcse8twossp9.cloudfront.net/static/img/icon/radio-blank-gray.svg'
+          );
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1023px) {
+  .group-program-tabs {
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+  .program-tab {
+    width: 120px;
+    height: 42px;
+    font-size: 16px;
+  }
+}
+
+@media all and (max-width: 780px) {
+  .group-modal-container {
+    width: 100%;
+    height: 100%;
+    .modal-left {
+      display: none;
+    }
+    .modal-right {
+      padding: 24px;
+      height: calc(var(--vh, 1vh) * 100 - 44px);
+    }
+    .modal-close {
+      top: 24px;
+      right: 24px;
+    }
+    .modal-button {
+      width: calc(100% - 48px);
+      height: 56px;
+      @include flexBox(row, center, center);
+      border-radius: 12px;
+      color: #ffffff;
+      cursor: default;
+      background-color: #e1e1e1;
+      position: fixed;
+      right: unset;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      &.button--on {
+        cursor: pointer;
+        background-color: #000000;
+      }
+      &.button--nonefix {
+        width: 100%;
+        position: unset;
+        transform: unset;
+      }
+    }
+    .button-pb {
+      padding-bottom: 56px;
+    }
+    .button-pb-36 {
+      padding-bottom: 24px;
+    }
+  }
+}

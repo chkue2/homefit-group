@@ -1,0 +1,137 @@
+@import '~/assets/scss/group/index.scss';
+.price-title {
+  font-size: 36px;
+  font-weight: $bold;
+  margin-bottom: 40px;
+  br {
+    display: none;
+  }
+}
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 24px;
+  margin-bottom: 40px;
+}
+.price-card {
+  padding: 40px;
+  height: 280px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.03);
+  background-color: #ffffff;
+  position: relative;
+  &.card-border {
+    border: 1px solid;
+    &.border--violet {
+      border-color: $group-violet;
+    }
+    &.border--green {
+      border-color: $group-green;
+    }
+  }
+}
+.card-title {
+  font-weight: $bold;
+  text-align: center;
+  strong {
+    font-weight: $regular;
+  }
+}
+.card-subtitle {
+  margin: 24px 0 40px;
+  font-size: 14px;
+  text-align: center;
+  line-height: normal;
+}
+.card-contents {
+  @include flexBox(column, center, center);
+  height: 80px;
+}
+.card-price {
+  font-size: 36px;
+  font-weight: $bold;
+  .small {
+    font-size: 30px;
+    font-weight: $regular;
+  }
+  &.fs-24 {
+    font-size: 24px;
+  }
+}
+.card-best {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card-caption {
+  font-weight: $bold;
+  color: #b9b9b9;
+  margin-top: 9px;
+}
+.card-discount {
+  width: 64px;
+  height: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.05);
+  font-weight: $bold;
+}
+.price-caption {
+  font-size: 14px;
+  color: #7d7d7d;
+  a {
+    font-size: 14px;
+    color: #7d7d7d;
+    text-decoration: underline;
+  }
+}
+@media all and (max-width: 1023px) {
+  .price-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+    br {
+      display: block;
+    }
+  }
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 12px;
+    margin-bottom: 12px;
+  }
+  .price-card {
+    height: 280px;
+    padding: 40px 20px;
+    &.card-border {
+      border: 1px solid;
+      &.border--violet {
+        border-color: $group-violet;
+      }
+      &.border--green {
+        border-color: $group-green;
+      }
+    }
+  }
+  .card-subtitle {
+    word-break: keep-all;
+  }
+  .card-contents {
+    height: 70px;
+  }
+  .card-caption {
+    font-size: 14px;
+    font-weight: $medium;
+    margin-top: 11px;
+  }
+  .card-discount {
+    width: 56px;
+    height: 28px;
+    font-size: 14px;
+    font-weight: $medium;
+    margin-top: 6px;
+  }
+}
